@@ -76,7 +76,7 @@ docker run --name=fast-builder \
     -e MYSQL_PASSWORD=root \
     -d guoshengkai/fast-builder:latest
 ````
-此时方位开发端口：http://localhost:8888， 看到以下页面即为安装成功：
+此时访问开发端口：http://localhost:8888， 看到以下页面即为安装成功：
 <img src="微信截图_20220607181249.png" />
 首次启时会拉取相应的前端依赖，动稍等片刻，即可通过访问 http://localhost:8080 看到实时预览页面：
 <img src="wecome.png" />
