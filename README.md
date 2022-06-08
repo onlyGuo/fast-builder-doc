@@ -97,7 +97,7 @@ docker run --name=fast-builder \
 ## 开发工作
 #### 创建一个模型
 在`models`中创建Persion模型：
-````
+````js
 Persion('my_persion', '人员'){
     string persionName('persion_name', '人员姓名');
     int persionSex('persion_sex', '人员年龄');
@@ -107,7 +107,7 @@ Persion('my_persion', '人员'){
 这种语法比编写Java实体、d.ts、建表语句或者图形化的操作方式效率更高。我们的目的是提高开发效率、减少开发成本，怎么高效就怎么做，而非所谓的“为了去代码化而去代码化”，相信大家已经看出来了。
 #### 创建一个接口
 在`apis`中新建一个`PersionApi.js`
-````
+````js
 export default {
     addAndListPersions: {
         description: '添加一个人员，并且列出所有的人员列表',
@@ -127,7 +127,7 @@ export default {
 
 #### 页面调用接口
 修改`MyPage.vue`:
-````
+````html
 <template>
     <div>
         <h1 v-for="persion in persionList">{{persion.persionName}}: {{persion.persionSex}}</h1>
