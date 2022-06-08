@@ -77,7 +77,7 @@ docker run --name=fast-builder \
     -d guoshengkai/fast-builder:latest
 ````
 此时方位开发端口：http://localhost:8888， 看到以下页面即为安装成功：
-
+<img src="微信截图_20220607181249.png" />
 
 ## 开发工作
 #### 创建一个模型
