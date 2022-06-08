@@ -80,6 +80,9 @@ docker run --name=fast-builder \
 <img src="微信截图_20220607181249.png" />
 首次启时会拉取相应的前端依赖，动稍等片刻，即可通过访问 http://localhost:8080 看到实时预览页面：
 <img src="wecome.png" />
+首次部署后，会自动创建一个“example”模块，通过开发者界面可以看到：
+- 一个模块由`apis`、`views`、`asstes`、`models`、`config.js`构成；
+- 一个项目由多个`模块`和一个`fast-builder.config.js`构成；
 
 ## 开发工作
 #### 创建一个模型
