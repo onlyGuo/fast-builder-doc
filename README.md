@@ -84,6 +84,12 @@ docker run --name=fast-builder \
 - 一个模块由`apis`、`views`、`asstes`、`models`、`config.js`构成；
 - 一个项目由多个`模块`和一个`fast-builder.config.js`构成；
 
+通过欢迎页面，我们可以看到`fast-builder.config.js`是整个项目的核心配置文件，现在我们试着修改他的主页。
+- 在`views`中创建一个`MyPage.vue`文件
+<img src="MyPage.png" />
+- 在config.js中，添加这个页面的路由为`my-page`，并给他指定标题为 `我的页面`
+<img src="config.png" />
+
 ## 开发工作
 #### 创建一个模型
 
