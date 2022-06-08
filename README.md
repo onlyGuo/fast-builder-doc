@@ -131,7 +131,7 @@ export default {
 ````html
 <template>
     <div>
-        <h1 v-for="persion in persionList">{{persion.persionName}}: {{persion.persionSex}}</h1>
+        <h1 v-for="persion in persionList">`{{persion.persionName}}: {{persion.persionSex}}`</h1>
     </div>
 </template>
 
