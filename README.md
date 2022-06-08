@@ -126,3 +126,34 @@ export default {
 ````
 
 #### 页面调用接口
+修改`MyPage.vue`:
+````
+<template>
+    <div>
+        <h1 v-for="persion in persionList">{{persion.persionName}}: {{persion.persionSex}}</h1>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'MyPage',
+    data() {
+        return {
+            persionList: []
+        }
+    },
+    mounted(){
+        this.$api.PersionApi.addAndListPersions().then(result => {
+            this.persionList = result
+        })
+    }
+}
+</script>
+<style lang="less" scoped>
+</style>
+
+````
+此时，查看8080端口，每次刷新页面后，页面中都会增加一个“张三”
+<img src="MyPage-Api.png" />
+
+到此，简单的介绍完毕，大家先自行熟悉探索，上手并不难，详细的文档过段时间补充。
