@@ -85,10 +85,14 @@ docker run --name=fast-builder \
 - 一个项目由多个`模块`和一个`fast-builder.config.js`构成；
 
 通过欢迎页面，我们可以看到`fast-builder.config.js`是整个项目的核心配置文件，现在我们试着修改他的主页。
-- 在`views`中创建一个`MyPage.vue`文件
+- 在`views`中创建一个`MyPage.vue`文件（修改完记得Ctrl+S）
 <img src="MyPage.png" />
-- 在config.js中，添加这个页面的路由为`my-page`，并给他指定标题为 `我的页面`
+- 在config.js中，添加这个页面的路由为`my-page`，并给他指定标题为 `我的页面`（修改完记得Ctrl+S）
 <img src="config.png" />
+- 修改`fast-builder.config.js`的默认路由为`example`模块下的`my-page`（修改完记得Ctrl+S）
+<img src="fastbuild.conf.png" />
+- 此时访问8080端口，默认路由将变为你刚刚创建的页面：
+<img src="hello.png" />
 
 ## 开发工作
 #### 创建一个模型
