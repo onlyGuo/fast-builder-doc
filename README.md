@@ -66,10 +66,18 @@ docker exec -i mysql sh -c 'exec mysql -uroot -proot -P 3306 -h 127.0.0.1 -e "CR
 
 #### 安装FastBuilder
 这里的FastBuilder是安装在开发服务器中，并非客户机，因此客户机不需要额外安装任何工具，只需要有一个浏览器即可。
-安装FastBuilder的时候
+安装FastBuilder的时候，配置好刚才创建的数据库, 如下：
 ````
-docker run ...
+docker run --name=fast-builder \
+    -p 8080:8080 -p 8888:8888 \
+    -e MYSQL_HOST=172.17.0.1:3306 \
+    -e MYSQL_DB_NAME=fast_build_template \
+    -e MYSQL_USERNAME=root \
+    -e MYSQL_PASSWORD=root \
+    -d guoshengkai/fast-builder:latest
 ````
+此时方位开发端口：http://localhost:8888， 看到以下页面即为安装成功：
+
 
 ## 开发工作
 #### 创建一个模型
