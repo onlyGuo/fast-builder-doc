@@ -96,7 +96,33 @@ docker run --name=fast-builder \
 
 ## 开发工作
 #### 创建一个模型
-
+在`models`中创建Persion模型：
+````
+Persion('my_persion', '人员'){
+    string persionName('persion_name', '人员姓名');
+    int persionSex('persion_sex', '人员年龄');
+}
+````
+为了提高效率简化繁琐的操作步骤，在这里我们使用了一种自定义语法来创建模型，暂且叫他“Model Describe Script”，简称“MDS”。
+这种语法比编写Java实体、d.ts、建表语句或者图形化的操作方式效率更高。我们的目的是提高开发效率、减少开发成本，怎么高效就怎么做，而非所谓的“为了去代码化而去代码化”，相信大家已经看出来了。
 #### 创建一个接口
+在`apis`中新建一个`PersionApi.js`
+````
+export default {
+    addAndListPersions: {
+        description: '添加一个人员，并且列出所有的人员列表',
+        execute() { 
+            // 添加一个人员
+            const persion = new Model.Persion();
+            persion.persionName = '张三';
+            persion.persionSex = 1;
+            Dao.PersionDao.insert(persion);
+
+            // 列出所有的人员列表
+            return Dao.PersionDao.list(Where.emptyWhere());
+        }
+    }
+}
+````
 
 #### 页面调用接口
