@@ -51,12 +51,22 @@
 # 快速开始
 ## 前期准备工作
 #### 创建数据库
+这里使用Docker来安装MYSQL
+````
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root \
+    -v /home/mysql/data:/var/lib/mysql \
+    -p 3306:3306 \
+    -d mysql:8.0.18 \
+    --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max_connections=4096
+````
+创建完MYSQL后，创建一个库，比如“example_db”，之后的介绍都会在“example_db”库中进行。
+````
+docker exec -i mysql sh -c 'exec mysql -uroot -proot -P 3306 -h 127.0.0.1 -e "CREATE DATABASE `example_db`;"'
+````
 
-````
-docker run ...
-````
 #### 安装FastBuilder
 这里的FastBuilder是安装在开发服务器中，并非客户机，因此客户机不需要额外安装任何工具，只需要有一个浏览器即可。
+安装FastBuilder的时候
 ````
 docker run ...
 ````
