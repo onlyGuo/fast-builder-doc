@@ -71,7 +71,7 @@ docker exec -i mysql sh -c 'exec mysql -uroot -proot -P 3306 -h 127.0.0.1 -e "CR
 docker run --name=fast-builder \
     -p 8080:8080 -p 8888:8888 \
     -e MYSQL_HOST=172.17.0.1:3306 \
-    -e MYSQL_DB_NAME=fast_build_template \
+    -e MYSQL_DB_NAME=example_db \
     -e MYSQL_USERNAME=root \
     -e MYSQL_PASSWORD=root \
     -d guoshengkai/fast-builder:latest
